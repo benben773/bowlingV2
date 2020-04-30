@@ -14,6 +14,18 @@ public class BowlingTest {
         bowling.roll(0);
         int score = bowling.score();
         assertEquals(0,score);
+        
+    }
+    @Test
+    public void should_get_10_when_roll_all_strike(){
+
+        Bowling bowling = new Bowling();
+        for (int i = 0; i <10 ; i++) {
+            bowling.roll(10);
+        }
+        assertEquals(10,bowling.getRollList().get(0).getRoll());
+
 
     }
+    
 }
