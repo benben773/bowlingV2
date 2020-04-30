@@ -17,7 +17,7 @@ public class BowlingTest {
         
     }
     @Test
-    public void should_get_10_when_roll_all_strike(){
+    public void should_get_300_when_roll_all_strike(){
 
         Bowling bowling = new Bowling();
         for (int i = 0; i <10 ; i++) {
@@ -25,6 +25,7 @@ public class BowlingTest {
         }
         assertEquals(10,bowling.getRollList().get(0).getRoll());
         assertEquals(10,bowling.getRollList().get(9).getRoll());
+        assertEquals(300,bowling.score());
 
     }
     @Test
@@ -53,7 +54,6 @@ public class BowlingTest {
         assertEquals(4,bowling.getRollList().get(0).getRoll());
         assertEquals(2,bowling.getRollList().get(1).getRoll());
         assertEquals(20,bowling.getRollList().size());
-
     }
     
 }
