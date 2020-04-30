@@ -25,7 +25,7 @@ public class BowlingTest {
         }
         assertEquals(10,bowling.getRollList().get(0).getRoll());
         assertEquals(10,bowling.getRollList().get(9).getRoll());
-        assertEquals(134,bowling.score());
+        assertEquals(300,bowling.score());
 
     }
     @Test
@@ -55,6 +55,7 @@ public class BowlingTest {
         assertEquals(4,bowling.getRollList().get(0).getRoll());
         assertEquals(2,bowling.getRollList().get(1).getRoll());
         assertEquals(20,bowling.getRollList().size());
+        assertEquals(60,bowling.score());
     }
     
 }
