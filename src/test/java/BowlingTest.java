@@ -57,5 +57,34 @@ public class BowlingTest {
         assertEquals(20,bowling.getRollList().size());
         assertEquals(60,bowling.score());
     }
+    @Test
+    public void should_get_score_when_one_strike_and_other_miss(){
+
+        Bowling bowling = new Bowling();
+        bowling.roll(10);
+        for (int i = 0; i <9 ; i++) {
+            bowling.roll(4);
+            bowling.roll(2);
+        }
+        assertEquals(10,bowling.getRollList().get(0).getRoll());
+        assertEquals(4,bowling.getRollList().get(1).getRoll());
+        assertEquals(19,bowling.getRollList().size());
+        assertEquals(70,bowling.score());
+    }
+    @Test
+    public void should_get_score_when_two_strike_and_other_miss(){
+
+        Bowling bowling = new Bowling();
+        bowling.roll(10);
+        bowling.roll(20);
+        for (int i = 0; i <8 ; i++) {
+            bowling.roll(4);
+            bowling.roll(2);
+        }
+        assertEquals(10,bowling.getRollList().get(0).getRoll());
+        assertEquals(4,bowling.getRollList().get(1).getRoll());
+        assertEquals(19,bowling.getRollList().size());
+        assertEquals(86,bowling.score());
+    }
     
 }

@@ -35,7 +35,7 @@ public class Bowling {
             } else if  (isMiss(firstRoll, secondRoll)){
                 score += firstRoll + secondRoll;
                 ballCount += 1;
-                if(ballCount == 17){
+                if(ballCount == size-7){
                     ballCount--;
                 }
             }
