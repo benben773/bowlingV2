@@ -76,15 +76,29 @@ public class BowlingTest {
 
         Bowling bowling = new Bowling();
         bowling.roll(10);
-        bowling.roll(20);
+        bowling.roll(10);
         for (int i = 0; i <8 ; i++) {
             bowling.roll(4);
             bowling.roll(2);
         }
         assertEquals(10,bowling.getRollList().get(0).getRoll());
-        assertEquals(4,bowling.getRollList().get(1).getRoll());
-        assertEquals(19,bowling.getRollList().size());
-        assertEquals(86,bowling.score());
+        assertEquals(4,bowling.getRollList().get(2).getRoll());
+        assertEquals(18,bowling.getRollList().size());
+        assertEquals(88,bowling.score());
+    }
+    @Test
+    public void should_get_score_when_two_miss_and_other_strike(){
+
+        Bowling bowling = new Bowling();
+        for (int i = 0; i <2 ; i++) {
+            bowling.roll(4);
+            bowling.roll(2);
+        }
+        for (int i = 0; i <8 ; i++) {
+            bowling.roll(10);
+        }
+        assertEquals(20,bowling.getRollList().size());
+        assertEquals(252,bowling.score());
     }
     
 }
