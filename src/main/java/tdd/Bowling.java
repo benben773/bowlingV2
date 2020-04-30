@@ -23,9 +23,25 @@ public class Bowling {
     public int score() {
         int size = rollList.size();
         for (int ballCount = 0; ballCount < size-2; ballCount++) {
-            score += rollList.get(ballCount).getRoll() + rollList.get(ballCount +1).getRoll() + rollList.get(ballCount + 2).getRoll();
+            int firstRoll = rollList.get(ballCount).getRoll();
+            int secondRoll = rollList.get(ballCount + 1).getRoll();
+            int therdRoll = rollList.get(ballCount + 2).getRoll();
+            if (isStrike(firstRoll,secondRoll)) {
+                score += firstRoll + secondRoll + therdRoll;
+            } else if  (isSpare(firstRoll, secondRoll)){
+                score += 10 + therdRoll;
+                ballCount += 1;
+            }
         }
         return score;
+    }
+
+    private boolean isSpare(int firstRoll, int secondRoll) {
+        return firstRoll + secondRoll == 10;
+    }
+
+    private boolean isStrike(int firstRoll, int secondRoll) {
+        return firstRoll==10;
     }
 
     public List<Ball> getRollList() {
