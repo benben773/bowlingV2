@@ -20,7 +20,7 @@ public class BowlingTest {
     public void should_get_300_when_roll_all_strike(){
 
         Bowling bowling = new Bowling();
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i <12 ; i++) {
             bowling.roll(10);
         }
         assertEquals(10,bowling.getRollList().get(0).getRoll());

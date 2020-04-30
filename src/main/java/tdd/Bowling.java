@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Bowling {
     private List<Ball> rollList;
+    private int score;
 
     public Bowling() {
         rollList = new ArrayList<Ball>();
@@ -20,14 +21,15 @@ public class Bowling {
     }
 
     public int score() {
-        return 0;
+        int size = rollList.size();
+        for (int ballCount = 0; ballCount < size-2; ballCount++) {
+            score += rollList.get(ballCount).getRoll() + rollList.get(ballCount +1).getRoll() + rollList.get(ballCount + 2).getRoll();
+        }
+        return score;
     }
 
     public List<Ball> getRollList() {
         return rollList;
     }
 
-    public void setRollList(List<Ball> rollList) {
-        this.rollList = rollList;
-    }
 }
