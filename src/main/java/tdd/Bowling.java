@@ -1,5 +1,6 @@
 package tdd;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,8 +10,13 @@ import java.util.List;
 public class Bowling {
     private List<Ball> rollList;
 
-    public void roll(int roll) {
+    public Bowling() {
+        rollList = new ArrayList<Ball>();
+    }
 
+    public void roll(int roll) {
+        Ball ball = new Ball(roll);
+        rollList.add(ball);
     }
 
     public int score() {
