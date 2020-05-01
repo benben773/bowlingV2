@@ -3,10 +3,6 @@ package tdd;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author ：ls05
- * @date ：Created in 2020/5/1 0:24
- */
 public class Bowling {
     private List<Ball> rollList;
     private int score;
